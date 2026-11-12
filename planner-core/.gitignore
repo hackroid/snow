@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+# 运行产物
+out.md
+out.html
+out.json
+bad.md
+*.log
+# 真实数据永不入包（白名单之外的批次/台账）
+data/
+**/data/batches/
+*-evidence.md
+# 凭据与会话
+.env
+*.pem
+*.key
+credentials*
+*session*
+cookies*
+*.db

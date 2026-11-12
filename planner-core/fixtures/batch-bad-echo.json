@@ -1,0 +1,183 @@
+{
+ "batch_note": "合成 fixture（非真实报价）：匿名产品与 example.invalid 链接，仅用于核心包离线恢复演练。",
+ "spec": {
+  "kind": "test",
+  "resort_id": "example-resort",
+  "resort_name": "示例雪场",
+  "first_ski_date": "2027-01-09",
+  "nights": 1,
+  "ski_days": 2,
+  "adults": 2,
+  "rooms": 1,
+  "tickets_each_day": true,
+  "ticket_holders_note": "全员成人、无免票（合成）",
+  "currency": "JPY"
+ },
+ "conditions": {
+  "spec_echo": {
+   "first_ski_date": "2027-01-09",
+   "nights": 1,
+   "adults": 2,
+   "rooms": 1
+  },
+  "resort_id": "example-resort",
+  "currency": "JPY",
+  "read_at": "2026-11-12T01:10:00+09:00",
+  "source_card": "合成 fixture：无真实来源。",
+  "plan": "合成计划层（示例，非真实雪场）",
+  "actual_open": "待核（合成 fixture 未取实况）",
+  "snow_official": "unknown（合成 fixture）",
+  "snow_amedas": "unknown（合成 fixture）",
+  "forecast": {
+   "issued": null,
+   "applies_from": null,
+   "coverage_end": null,
+   "weather_by_date": {},
+   "source": "合成 fixture 未读取 JMA"
+  },
+  "warnings": "未取得（合成 fixture）",
+  "livecam": "合成 fixture：未取影像"
+ },
+ "lodging": {
+  "spec_echo": {
+   "first_ski_date": "2026-12-26",
+   "nights": 1,
+   "adults": 2,
+   "rooms": 1
+  },
+  "resort_id": "example-resort",
+  "currency": "JPY",
+  "read_at": "2026-11-12T01:10:00+09:00",
+  "coverage": "合成 fixture 覆盖声明：2 个匿名产品，仅演练。",
+  "candidates": [
+   {
+    "name": "示例套餐A（合成）",
+    "platform": "ExampleTour",
+    "resort_id": "example-resort",
+    "property_group": "示例套餐A",
+    "pricing_basis": "per_person",
+    "base_per_person": 10000,
+    "ticket_included_in_base": true,
+    "ticket_days_covered": 2,
+    "ticket_start_date": "2027-01-09",
+    "ticket_source": "included",
+    "meals": "合成：夕食+早餐",
+    "equipment": {
+     "status": "included",
+     "note": "合成：滞在中含"
+    },
+    "cancellation": "合成取消表",
+    "access": "合成：步行 3 分（示例）",
+    "extra_fees_note": "合成示例，无真实另付项。",
+    "url": "https://example.invalid/tour/pkg-a",
+    "quote_read_at": "2026-11-12T01:10:00+09:00",
+    "ticket_scope_resort_ids": [
+     "example-resort"
+    ],
+    "ticket_covers_people": 2,
+    "ticket_addon_per_person": null,
+    "room_price_total": null,
+    "per_person_known_subtotal": 10000,
+    "group_known_subtotal": 20000
+   },
+   {
+    "name": "示例民宿B（合成）",
+    "platform": "ExampleOTA",
+    "resort_id": "example-resort",
+    "property_group": "示例民宿B",
+    "pricing_basis": "room",
+    "room_price_total": 8000,
+    "ticket_included_in_base": false,
+    "ticket_source": "external",
+    "meals": "合成：食事なし",
+    "equipment": {
+     "status": "unknown",
+     "note": "合成：未载"
+    },
+    "cancellation": "合成：不可取消",
+    "access": "合成：自驾（示例）",
+    "extra_fees_note": "参考小计（票条件待核・非完整报价）：房价 ¥8,000 + 票 ¥3,000×2 天×2 人 = ¥20,000（合成演算示例）。",
+    "url": "https://example.invalid/ota/room-b",
+    "quote_read_at": "2026-11-12T01:10:00+09:00",
+    "ticket_days_covered": null,
+    "ticket_covers_people": null,
+    "ticket_scope_resort_ids": null,
+    "ticket_start_date": null,
+    "ticket_addon_per_person": null,
+    "per_person_known_subtotal": null,
+    "group_known_subtotal": null,
+    "base_per_person": null
+   }
+  ],
+  "source_batch": "合成 fixture（无来源批次）"
+ },
+ "ticket_offers": [
+  {
+   "id": "example-official-1day",
+   "name": "示例官方 1 日券（合成）",
+   "unit": "person_day",
+   "days_covered": 1,
+   "repeatable": true,
+   "valid_from": "2026-12-19",
+   "valid_to": null,
+   "deadline_rule": "unknown",
+   "checks": {
+    "valid_dates": false,
+    "scope": true,
+    "days_units": true,
+    "eligibility": true,
+    "deadline": false,
+    "sale_status": true,
+    "source_trust": true
+   },
+   "note": "合成 offer：季终日与截止未核 → held 演练。",
+   "price_per_person": 3000,
+   "scope_resort_ids": [
+    "example-resort"
+   ]
+  }
+ ],
+ "purchase_context": {
+  "purchase_at": "2026-11-12T09:00:00+09:00",
+  "memberships": {}
+ },
+ "date_rules": {
+  "parking": {
+   "fee": 1000,
+   "charged_weekdays": [
+    5
+   ],
+   "charged_dates": [
+    "2027-01-10",
+    "2027-03-21"
+   ],
+   "charged_ranges": [
+    [
+     "2026-12-29",
+     "2027-01-03"
+    ]
+   ],
+   "default_free_verified": true,
+   "source": "合成规则（结构同真实批次：土曜、12/29-1/3、1/10、3/21 收费，其余免费）",
+   "source_time": "合成 fixture，无真实源时刻"
+  },
+  "ticket_deadlines": [
+   {
+    "id": "example-earlybird-1day",
+    "deadline_rule": "fixed:2026-12-18",
+    "deadline_tz": "Asia/Tokyo",
+    "source": "合成规则（结构示例）",
+    "source_time": "合成 fixture，无真实源时刻"
+   }
+  ]
+ },
+ "missing": [
+  "合成缺项：示例官方票季终日/排除日未载，票 held。"
+ ],
+ "recheck": [
+  "合成复核：临近 2027-01-02 起核示例雪场预报（演练文本）。"
+ ],
+ "choice_directions": [
+  "合成方向：唯一完整为示例套餐A（住宿＋票已知小计），非全部应付价。"
+ ]
+}
